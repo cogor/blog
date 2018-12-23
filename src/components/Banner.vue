@@ -10,7 +10,7 @@
 </template>
 <script>
 export default {
-  name: "Banner"
+  name: 'Banner',
 };
 </script>
 <style lang="scss">
@@ -38,4 +38,3 @@ export default {
   }
 }
 </style>
-
