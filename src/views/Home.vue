@@ -1,39 +1,42 @@
 <template>
   <div class="home">
-    <Header/>
     <Banner/>
     <h2>Последние статьи</h2>
+    <div class="posts">
+      <div class="post" v-for="(item, index) in posts" :key="index">
+        <router-link :to="{ name: 'post', params: { post: index }}">
+          <img :src="item.img">
+        </router-link>
+        <h3>{{item.title}}</h3>
+        <p>{{item.content}}</p>
+        <div class="button-more">
+          <router-link :to="{ name: 'post', params: { post: index }}">Читать</router-link>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Header from "@/components/Header.vue";
-import Banner from "@/components/Banner.vue";
+
+import Banner from '@/components/Banner.vue';
+import Post from '@/components/Post.vue';
+import store from '../store.js';
 
 export default {
-  name: "home",
-  data: function() {
-    return {
-      posts: [
-        {
-          title: "Хороший, спорный, злой Vue.js: опыт перехода с React",
-          img:
-            "https://proglib.io/wp-content/uploads/2018/07/1_qnI8K0Udjw4lciWDED4HGw.png",
-          content: `
-          Прежде чем начать работу с Vue.js, следует подробнее узнать о его достоинствах, недостатках и спорных моментах. Наш обзор поможет в этом.
-          Переход с одного фреймворка на другой всегда сопровождается волнением и стрессом. Даже освоившись немного с новым инструментом, нельзя расслабляться.
-
-Автор статьи вместе со своей командой перешел с React на Vue. Спустя два года регулярной работы он решился написать небольшой обзор о достоинствах и недостатках нового инструмента.
-          `
-        }
-      ]
-    };
+  name: 'home',
+  data() {
+    return {};
   },
   components: {
-    Header,
-    Banner
-  }
+    Banner,
+  },
+  computed: {
+    posts() {
+      return store.state.posts;
+    },
+  },
 };
 </script>
 <style lang="scss">
@@ -42,5 +45,58 @@ h2 {
   font-weight: bold;
   font-size: 36px;
   color: #3b3b3b;
+}
+.posts {
+  font-family: Montserrat;
+  display: grid;
+  grid-template-columns: 1050px;
+  justify-content: center;
+  .post {
+    margin-bottom: 35px;
+    border: 1px solid #35495e36;
+    border-radius: 5px;
+    img {
+      width: 100%;
+    }
+    h3 {
+      font-family: Montserrat;
+      font-weight: bold;
+      font-size: 26px;
+      color: #3b3b3b;
+      text-align: left;
+      padding-left: 28px;
+      padding-right: 28px;
+    }
+    p {
+      font-family: Montserrat;
+      font-weight: 300;
+      font-size: 18px;
+      color: #3b3b3b;
+      padding-left: 28px;
+      padding-right: 28px;
+      text-align: left;
+    }
+  }
+  .button-more {
+    margin-top: 20px;
+    text-align: right;
+    a {
+      display: inline-block;
+      background: #42b983;
+      padding: 8px 85px;
+      font-family: Montserrat;
+      font-weight: bold;
+      font-size: 24px;
+      text-decoration: none;
+      color: #fff;
+      border-radius: 5px;
+      transition: all 0.3s;
+      margin-right: 44px;
+      margin-bottom: 28px;
+      &:hover {
+        background: #35495e;
+      }
+    }
+  }
 }
 </style>

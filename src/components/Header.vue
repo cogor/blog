@@ -35,6 +35,7 @@ export default {
   grid-template-columns: 1fr 1fr;
   padding: 18px 30px;
   justify-content: space-between;
+  align-items: center;
   background: #f5f5f5;
   box-shadow: 0px 4px 10px #e5e5e5;
   z-index: 999;
@@ -48,10 +49,12 @@ logo {
   font-style: normal;
   font-weight: bold;
   line-height: normal;
-  font-size: 18px;
+  font-size: 24px;
   color: #3b3b3b;
   text-align: left;
-
+  &:hover {
+    opacity: 0.9;
+  }
   span {
     color: #42b983;
   }
@@ -79,7 +82,10 @@ logo {
     text-decoration: none;
     font-family: Montserrat;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
+    &:hover {
+      color: #42b983;
+    }
   }
 }
 </style>

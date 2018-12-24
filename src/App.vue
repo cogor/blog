@@ -1,9 +1,18 @@
 <template>
   <div id="app">
-    <router-view/>
+    <Header/>
+    <router-view></router-view>
   </div>
 </template>
+<script>
+import Header from '@/components/Header.vue';
 
+export default {
+  components: {
+    Header,
+  },
+};
+</script>
 <style lang="scss">
 body {
   margin: 0;
@@ -25,5 +34,12 @@ body {
       color: #42b983;
     }
   }
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  opacity: 0;
 }
 </style>
