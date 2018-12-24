@@ -47,6 +47,7 @@ body {
   grid-template-columns: 1fr 1fr;
   padding: 18px 30px;
   justify-content: space-between;
+
   align-items: center;
   background: #f5f5f5;
   box-shadow: 0px 4px 10px #e5e5e5;
@@ -98,9 +99,29 @@ logo {
     font-family: Montserrat;
     font-weight: bold;
     font-size: 16px;
+
     &:hover {
       color: #42b983;
     }
+  }
+}
+.hamburger {
+  display: none;
+}
+@media (max-width: 1150px) {
+  .menu {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+    height: 100%;
+    text-align: right;
+    img {
+      height: 35px;
+    }
+  }
+  .header {
+    padding: 15px 10px;
   }
 }
 </style>

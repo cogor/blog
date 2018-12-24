@@ -30,4 +30,10 @@ export default {
     width: 100%;
   }
 }
+@media (max-width: 1150px) {
+  .post {
+    grid-template-columns: auto;
+    margin-top: 0;
+  }
+}
 </style>

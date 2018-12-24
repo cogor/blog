@@ -1,5 +1,11 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <div class="photo">
+      <img src alt>
+    </div>
+    <div>
+      <h1>Обо мне</h1>
+      <p></p>
+    </div>
   </div>
 </template>

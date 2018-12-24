@@ -20,22 +20,22 @@
 <script>
 // @ is an alias to /src
 
-import Banner from '@/components/Banner.vue';
-import store from '../store';
+import Banner from "@/components/Banner.vue";
+import store from "../store";
 
 export default {
-  name: 'home',
+  name: "home",
   data() {
     return {};
   },
   components: {
-    Banner,
+    Banner
   },
   computed: {
     posts() {
       return store.state.posts;
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss">
@@ -94,6 +94,31 @@ h2 {
       margin-bottom: 28px;
       &:hover {
         background: #35495e;
+      }
+    }
+  }
+}
+@media (max-width: 1150px) {
+  h2 {
+    font-size: 24px;
+    margin-top: 45px;
+  }
+  .posts {
+    grid-template-columns: auto;
+    .button-more {
+      a {
+        margin-right: 5px;
+        margin-bottom: 5px;
+        font-size: 18px;
+        padding: 5px 50px;
+      }
+    }
+    .post {
+      h3 {
+        font-size: 20px;
+      }
+      p {
+        font-size: 16px;
       }
     }
   }

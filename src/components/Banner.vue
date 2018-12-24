@@ -38,4 +38,15 @@ export default {
     }
   }
 }
+@media (max-width: 1150px) {
+  .banner {
+    height: 50vh;
+    background-image: url("../assets/Group.png");
+    align-items: flex-end;
+    h1 {
+      font-size: 34px;
+      margin-left: 25px;
+    }
+  }
+}
 </style>
