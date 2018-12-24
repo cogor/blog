@@ -21,8 +21,7 @@
 // @ is an alias to /src
 
 import Banner from '@/components/Banner.vue';
-import Post from '@/components/Post.vue';
-import store from '../store.js';
+import store from '../store';
 
 export default {
   name: 'home',

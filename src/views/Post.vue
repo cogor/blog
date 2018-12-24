@@ -8,16 +8,15 @@
   </div>
 </template>
 <script>
-import Header from "@/components/Header.vue";
-import store from "../store.js";
+import store from '../store';
 
 export default {
-  name: "post",
+  name: 'post',
   computed: {
     post() {
       return store.state.posts[this.$route.params.post];
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss">
