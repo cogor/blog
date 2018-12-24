@@ -10,11 +10,12 @@
 </template>
 <script>
 export default {
-  name: 'Banner',
+  name: "Banner"
 };
 </script>
 <style lang="scss">
 .banner {
+  position: relative;
   display: grid;
   max-height: 800px;
   height: 80vh;
