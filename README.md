@@ -1,5 +1,7 @@
 # blog
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/cogor/blog.svg)](https://greenkeeper.io/)
+
 ## Project setup
 ```
 npm install
